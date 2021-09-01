@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectedSamples.ViewModels"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="CollectedSamples.Views.EditableCollectionPage"
+             Title="{ Binding Title }">
+
+    <ContentPage.BindingContext>
+        <local:EditableCollectionViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <StackLayout Orientation="Horizontal">
+            <Label FontSize="Large" HorizontalOptions="StartAndExpand">Nobel Prize winners</Label>
+            <Image x:Name="Add" HorizontalOptions="End">
+                <Image.Source>
+                    <FontImageSource FontFamily="FontAwesome5Regular" Size="20" 
+                                     Color="Blue"
+                                     Glyph="{x:Static fontAwesome:FontAwesomeIcons.PlusSquare}"/>
+                </Image.Source>
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Add_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+        <CollectionView x:Name="SamplesCollection" 
+                        ItemsSource="{ Binding Data }" 
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="1" BackgroundColor="Beige" Orientation="Horizontal" >
+                        <Label Padding="3" FontSize="Medium" Text="{Binding .}" HorizontalOptions="StartAndExpand" ></Label>
+                        <Image x:Name="Edit" HorizontalOptions="End">
+                            <Image.Source>
+                                <FontImageSource FontFamily="FontAwesome5Regular" Size="20"
+                                 Color="Black"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.Edit}"/>
+                            </Image.Source>
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Edit_Tapped" CommandParameter="{ Binding . }"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image x:Name="Delete" HorizontalOptions="End">
+                            <Image.Source>
+                                <FontImageSource FontFamily="FontAwesome5Regular" Size="20"
+                                 Color="Black"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.TrashAlt}"/>
+                            </Image.Source>
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="Delete_Tapped" CommandParameter="{Binding . }"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+    
+</ContentPage>

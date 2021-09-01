@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollectedSamples.Views.AboutPage"
+             xmlns:vm="clr-namespace:CollectedSamples.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="10">
+        <Label FontSize="Large">Demos</Label>
+        <CollectionView x:Name="SamplesCollection" 
+                        ItemsSource="{ Binding Samples }" 
+                        SelectionMode="Single"
+                        SelectedItem="{Binding SelectedSample}"
+                        SelectionChangedCommand="{ Binding SelectionChangedCommand }">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="1">
+                        <Label Padding="3" FontSize="Medium" Text="{Binding .}" BackgroundColor="Beige"></Label>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

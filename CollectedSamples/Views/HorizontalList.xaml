@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectedSamples.ViewModels"
+             x:Class="CollectedSamples.Views.HorizontalList">
+
+    <ContentPage.BindingContext>
+        <local:HorizontalListViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="lvEmployees" 
+                            Margin="5"
+                            ItemsSource="{ Binding Employees}" 
+                            SelectedItem="{ Binding SelectedEmployee }">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"
+                                     Span="3"
+                                     VerticalItemSpacing="5"
+                                     HorizontalItemSpacing="5"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame Padding="2"
+                               BorderColor="DarkSalmon"
+                               CornerRadius="10"
+                               HasShadow="False">
+                            <Label Padding="5" FontSize="Medium" Text="{Binding .}"></Label>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

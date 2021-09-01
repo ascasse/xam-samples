@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectedSamples.ViewModels"
+             x:Class="CollectedSamples.Views.CategoriesPage">
+
+    <ContentPage.BindingContext>
+        <local:CategoriesViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <CollectionView x:Name="CategoryList" 
+                            ItemsSource="{ Binding Groups }"
+                            IsGrouped="True"
+                            ItemsLayout="VerticalGrid, 2"
+                            >
+                <CollectionView.GroupHeaderTemplate>
+                    <DataTemplate>
+                        <Label Text="{ Binding Name}" 
+                               FontSize="Medium"
+                               Padding="2"
+                               BackgroundColor="Lavender"/>
+                    </DataTemplate>
+                </CollectionView.GroupHeaderTemplate>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Label Text="{ Binding Text}" Padding="20, 0, 0, 0"/>
+                    </DataTemplate>                    
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

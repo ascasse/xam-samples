@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="CollectedSamples.Views.FontawesomePage">
+    <ContentPage.Content>
+        <StackLayout Padding="50">
+            <Image>
+                <Image.Source>
+                    <FontImageSource FontFamily="FontAwesome5Regular" Size="100"
+                                 Color="Red"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.ThumbsUp}"/>
+                </Image.Source>
+            </Image>
+            <Image>
+                <Image.Source>
+                    <FontImageSource FontFamily="FontAwesome5Regular" Size="100"
+                                 Color="Black"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.Edit}"/>
+                </Image.Source>
+            </Image>
+            <Image>
+                <Image.Source>
+                    <FontImageSource FontFamily="FontAwesome5Regular" Size="100"
+                                 Color="Red"
+                                 Glyph="{x:Static fontAwesome:FontAwesomeIcons.TrashAlt}"/>
+                </Image.Source>
+            </Image>            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Name": "Flags",
+    "Items": [
+      {
+        "Id": 1,
+        "Text": "Germany",
+        "Description": "Germany flag",
+        "ImageLocation": "/sdcard/Download/Learning/imgs/Banderas/Alemania.png",
+        "LastUse": "2021-02-25T22:58:17.3926895+01:00"
+      },
+      {
+        "Id": 2,
+        "Text": "France",
+        "Description": "France flag",
+        "ImageLocation": "/sdcard/Download/Learning/imgs/Banderas/Francia.png",
+        "LastUse": "2021-02-25T22:58:17.3926895+01:00"
+      }
+    ],
+    "LastVisited": "2021-08-08T23:41:29.6314024+02:00"
+  },
+    {
+        "Id": 1,
+        "Name": "Category 2",
+        "Items": [
+            {
+                "Id": 2,
+                "Text": "Item 2",
+                "Description": "Description Item 2",
+                "ImageLocation": null,
+                "LastUse": "2021-02-25T22:58:17.3926895+01:00"
+            }
+        ],
+        "LastVisited": ""
+    }
+]
+

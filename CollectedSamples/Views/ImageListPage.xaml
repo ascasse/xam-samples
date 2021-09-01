@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CollectedSamples.ViewModels"
+             x:Class="CollectedSamples.Views.ImageListPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <local:ImageListViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout  HorizontalOptions="FillAndExpand">
+            <CollectionView x:Name="Books"
+                            ItemsSource="{ Binding Books }">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Grid Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="70" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="{Binding ImagePath}" 
+                                   Aspect="AspectFit"
+                                   HeightRequest="100" />
+                                <Label Grid.Column="1" Padding="3" FontSize="Medium" Text="{Binding Title}" ></Label>
+                            </Grid>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
